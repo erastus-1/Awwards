@@ -1,5 +1,4 @@
-# **AWWARDS**
-## :bowtie:
+# **AWWARDS** :bowtie:
 
 ### **Author**
 
