@@ -1,6 +1,6 @@
-# **AWWARDS** :bowtie:
+# **AWWARDS** 
 
-### **Author**
+### **Author** :bowtie:
 
 *Ruiru, Erastus*
 
