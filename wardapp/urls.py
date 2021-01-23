@@ -5,8 +5,10 @@ from . import views
 
 urlpatterns=[
     url('^$',views.home,name = 'home'),
-    url('profile/'views.profile_info, name='profile'),
-    url('update/'views.profile_update, name='update'),
+    url('profile/',views.profile_info, name='profile'),
+    url('update/',views.profile_update, name='update'),
+    url('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
+    url('post/new/', PostCreateView.as_view(), name='post-edit'),
 
 ]
 
