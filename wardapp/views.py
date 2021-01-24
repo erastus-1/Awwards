@@ -25,7 +25,7 @@ def profile_info(request):
     current_user = request.user
     profile = Profile.objects.filter(user=current_user).first()
 
-    return render(request, 'profile/profile.html', {'profile':profile})
+    return render(request, 'profile/profile.html',locals())
 
 @login_required(login_url='/accounts/login/')
 def profile_update(request):
