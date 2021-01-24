@@ -10,7 +10,7 @@
             <div class="row"
                 style="overflow:hidden;-webkit-border-radius:50px; -moz-border-radius:50px; border-radius:100px; width:90px;height:100px;">
                 {% if result.profile_pic %}
-                <img src="{{search.profile_image.url}}" alt="image">
+                <img src="{{search.user.profile.image.url}}" alt="image">
                 {% else %}
                 <img src="/static/img/ocean.jpg" alt="image">
                 {% endif %}
