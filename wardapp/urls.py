@@ -10,6 +10,7 @@ urlpatterns=[
     url('update/',views.profile_update, name='update'),
     url('post_edit/', views.post_edit, name = 'post_edit'),
     url('api/merch/', views.MerchList.as_view()),
+    url('api/merch/merch-id/(?P<pk>[0-9]+)/', views.MerchDescription.as_view())
 ]
 
 if settings.DEBUG:

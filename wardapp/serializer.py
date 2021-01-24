@@ -4,4 +4,4 @@ from .models import AwardMerch
 class MerchSerializer(serializers.ModelSerializer):
     class Meta:
         model = AwardMerch
-        fields = ('name', 'design', 'usability','content')
+        fields = ('id','name', 'design', 'usability','content')
