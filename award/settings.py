@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'cloudinary',
     'tinymce',
-    'star-ratings' ,
+    'star_ratings' ,
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

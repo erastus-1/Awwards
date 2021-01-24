@@ -12,7 +12,7 @@
                         <h1>{{ object.title }}</h1>
                         <img class="img-responsive" width="300" height="200" src="{{ object.image.url }}" alt="Image">
                         {% endif %}
-                        <p>{{ object.desc }}</p>
+                        <p>{{ object.description }}</p>
                         <a class="btn btn-info" target="_blank" href="/"><strong>View more</strong></a>
                         <p>By {{ object.user }}</p>
                         <small>{{ object.date_post|date:"F d, Y" }}</small>

@@ -7,34 +7,29 @@
         style="margin-bottom: 10px;  padding-left:55px; padding-right:55px; font-family: 'Grenze Gotisch', cursive;">
         <h1 style="font-family: 'Aclonica', sans-serif; text-align: center; font-weight: bolder;">PROJECTS</h1>
     <div class="row">
+
         {% for post in projects %}
         
         <div class="col-md-4" style="margin-bottom:25px;">
-            <div id="image" class="hover02 column body">
-            </div>
             <div class="card">
-            <div class="card-header" style="font-size: 13px; margin-top:0px; height: 100vh;">
-                <p style="font-weight:bold;" class="text-center"><strong> {{post.title}}</strong></p>
+            <div class="card-heade">
+                <h2 style="font-weight:bold;" class="text-center"><strong> {{post.title}}</strong></h2>
             </div>
-            <div class="card-body" style="font-size: 13px; margin-top:0px; height: 100vh;">
+            <div class="card-body">
                 <img class="card-img-top" src="{{post.image.url}}" alt="{{post.title}}" height="200px" width="200px">
-                <p style="font-weight:bold;" class="text-center"><strong>{{post.desc}}</strong> </p>
-                <p style="font-weight:bold;" class="text-center"><strong><i>{{post.technologies}}</i></strong> </p>
+                <p style="font-weight:bold;" class="text-center"><strong>{{post.description}}</strong> </p>
+                <p style="font-weight:bold;" class="text-center"><strong><i>Technologies used: {{post.technologies}}</i></strong> </p>
                 <p style="font-weight:bold;" class="text-center"><strong>Posted on: {{post.post_date|date:"d /m/Y"}}</strong> </p>
-                <p>{% ratings post %}</p>
-                <small class="text-muted ml-2"><img src="{{ project_item.Author.profile.photo.url }}" alt=""
+                <small class="text-muted ml-2"><img src="{{ post.user.profile.image.url }}" alt=""
                         class="rounded-circle img-fluid mr-1" style="width: 30px;">
-                    posted By: {{post.author|upper}} </small>
+                   <strong>posted By: {{post.user|upper}}</strong></small>
                 </div>
-
-                <div class="">
-                    <div class="card-footer" style="font-size: 13px; margin-top:0px; height: 100vh;">
+                    <div class="card-footer" style="text-align: center;">
                     <button class="btn"
                         style=" border-radius: 5em; background-color: #49c5b6; border:none; padding: 2px; height:40px; width: 200px;"><a
-                            target="blank" style="color: white; text-decoration:none;"
+                            target="_blank" style="color: white; text-decoration:none;"
                             href="{{post.link}}"><strong>View
-                                Site</strong></a></button>
-                </div>   
+                                Project</strong></a></button>  
             </div>         
         </div>
 

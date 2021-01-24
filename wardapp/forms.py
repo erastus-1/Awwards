@@ -26,5 +26,5 @@ class UpdateForm(forms.ModelForm):
 class ProjectForm(forms.ModelForm):
 
     class Meta:
-        model= Project
-        exclude= ['user', 'image', 'title', 'description', 'link','post_date', 'technologies']   
+        model= Projects
+        fields= ['user', 'image', 'title', 'description', 'link','post_date', 'technologies']   

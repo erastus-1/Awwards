@@ -40,7 +40,7 @@ class Profile(models.Model):
     def search_user(cls,user):
         return cls.objects.filter(user__username__icontains=user).all()
 
-class Project(models.Model):
+class Projects(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
     image = CloudinaryField('image', blank=True, null=False)
     title = models.CharField(max_length=200)
@@ -57,9 +57,6 @@ class Project(models.Model):
 
     def delete_project(self):
         self.delete()
-
-    def get_absolute_url(self): 
-        return reverse('post_detail', kwargs={'pk': self.pk})
 
     @classmethod
     def search_projects(cls,search_term):
