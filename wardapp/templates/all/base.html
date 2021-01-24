@@ -30,33 +30,39 @@
 
     <body>
         {% include "all/navbar.html" %}
-        <div class="jumbotron jumbotron-fluid" style="background-image: url(/static/img/1.png); width:100%; height:400px" id="topImg">
+        <div class="jumbotron jumbotron-fluid"
+            style="background-image: url(/static/img/1.png); width:100%; height:400px" id="topImg">
             <div class="container" style="color: black;">
                 <div class="row">
                     <div class="col-md-4" style="font-weight: 700; padding-top: 10%;">
-                <a style='border-radius: 50px; font-size: large;' target="_blank" href="https://news-app-ruiru.herokuapp.com">Site of the day</a>
-                <small class="text" style="font-size: large;">23th January 2021</small>
+                        <a style='border-radius: 50px; font-size: large;' target="_blank"
+                            href="https://news-app-ruiru.herokuapp.com">Site of the day</a>
+                        <small class="text" style="font-size: large;">23th January 2021</small>
                     </div>
-                    
-              <div class="col-md-8">
-                  <div style="float: right; margin-top: 5%; margin-right: 5%; font-weight: bolder;">
-                <a style="border-radius: 50%; border-width: 2px;" class="btn btn-outline-dark" href="/">Likes</a>
-                <a style="border-radius: 50%; border-width: 2px;" class="btn btn-outline-dark" href="/">collect</a>
+
+                    <div class="col-md-8">
+                        <div style="float: right; margin-top: 5%; margin-right: 5%; font-weight: bolder;">
+                            <a style="border-radius: 50%; border-width: 2px;" class="btn btn-outline-dark"
+                                href="/">Likes</a>
+                            <a style="border-radius: 50%; border-width: 2px;" class="btn btn-outline-dark"
+                                href="/">collect</a>
+                        </div>
+                        <div class="title" style="font-size:x-large; padding-top: 20%;">
+                            <cite>Witness to History..</cite>
+                            <h2 style="font-style: italic;">By<strong> Ruiru, Erastus </strong> From Nairobi,Kenya</h2>
+                        </div>
+                    </div>
+                    <div class="'col-md-12">
+                        <div class=""
+                            style="position: absolute; top: 30%; left: 10%; margin-top: 5%;font-weight: bolder;">
+                            <a style="border-radius: 50%; border-width: 2px;" class="btn btn-outline-dark"
+                                target="_blank" href="https://en.wikipedia.org/wiki/Award">Visit</a>
+                        </div>
+                    </div>
                 </div>
-            <div class="title" style="font-size:x-large; padding-top: 20%;">
-                <cite>Witness to History..</cite>
-                <h2 style="font-style: italic;">By<strong> Ruiru, Erastus </strong> From Nairobi,Kenya</h2>
-                </div>
-              </div>
-        <div class="'col-md-12">
-            <div class="" style="position: absolute; top: 30%; left: 10%; margin-top: 5%;font-weight: bolder;">
-            <a style="border-radius: 50%; border-width: 2px;" class="btn btn-outline-dark" target="_blank" href="https://en.wikipedia.org/wiki/Award">Visit</a>
             </div>
         </div>
-            </div>
-            </div>
-          </div>
-          
+
 
         {% block content%}
 
