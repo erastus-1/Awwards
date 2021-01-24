@@ -1,7 +1,8 @@
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User 
 from tinymce.models import HTMLField
-# from django.utils import timezone
+from django.utils import timezone
+from django.urls import reverse
 from django.db import models
 import datetime as dt
 import cloudinary
@@ -35,14 +36,18 @@ class Profile(models.Model):
         profile = Profile.objects.all()
         return profile
 
+    @classmethod
+    def search_user(cls,user):
+        return cls.objects.filter(user__username__icontains=user).all()
+
 class Project(models.Model):
-    user_profile = models.ForeignKey(Profile, on_delete=models.CASCADE, blank=True, null=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
     image = CloudinaryField('image', blank=True, null=False)
     title = models.CharField(max_length=200)
     description = HTMLField(blank=True)
-    link = models.URLField()
-    date_created = models.DateTimeField(auto_now_add=True)
+    link = models.URLField(max_length=70)
+    post_date = models.DateTimeField(default=timezone.now)
+    technologies = models.CharField(max_length=100)
 
     def save_project(self):
         self.save()
@@ -52,3 +57,11 @@ class Project(models.Model):
 
     def delete_project(self):
         self.delete()
+
+    def get_absolute_url(self): 
+        return reverse('post_detail', kwargs={'pk': self.pk})
+
+    @classmethod
+    def search_projects(cls,search_term):
+        project = cls.objects.filter(title__icontains=search_term)
+        return project

@@ -11,7 +11,7 @@ from django.views.generic import DetailView, CreateView
 # Create your views here.
 def home(request):
     date = dt.date.today()
-    projects = Projects.objects.all()
+    project = Project.objects.all()
 
     return render(request,'all/home.html',locals())
 
@@ -37,6 +37,20 @@ def profile_update(request):
         form = UpdateForm()
     return render(request, 'profile/update.html',{'form':form})
 
+@login_required(login_url='/accounts/login/')
+def search(request):
+    profiles = User.objects.all()
+
+    if 'username' in request.GET and request.GET['username']:
+        search_term = request.GET.get('username')
+        results = User.objects.filter(username__icontains=search_term)
+        message = f'{search_term}'
+        profile_pic = User.objects.all()
+
+        return render(request,'all/results.html',locals())
+
+    return redirect('home')
+
 
 # @login_required(login_url='/accounts/login/')
 # def post_edit(request):
@@ -47,22 +61,23 @@ def profile_update(request):
 #             add=form.save(commit=False)
 #             add.author = current_user
 #             add.save()
-#             return redirect('post_edit.html')
+#             return redirect('home')
 
 #     else:
 #             form = ProjectForm()
 #             return render(request,'post_edit.html', {"form":form})
 
 class PostDetailView(DetailView):
-    model = Post
-    template_name = 'post_detail.html'
+    model = Project
+    template_name = 'all/post_detail.html'
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
-    model = Post
+    model = Project
     fields = ['image', 'title', 'description', 'link','technologies', 'post_date', 'user']
-    template_name = 'post_edit.html'
+    template_name = 'all/post_edit.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+        
