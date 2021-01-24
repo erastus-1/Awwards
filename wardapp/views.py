@@ -1,5 +1,10 @@
 from .forms import *
 from .models import *
+from .models import  AwardMerch
+from rest_framework import status
+from .serializer import MerchSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
 from django.contrib.auth import views as auth_views
@@ -72,3 +77,15 @@ def get_project(request, id):
 
     return render(request, 'all/post_detail.html', {'project':project})
 
+class MerchList(APIView):
+    def get(self, request, format=None):
+        all_merch = AwardMerch.objects.all()
+        serializers = MerchSerializer(all_merch, many=True)
+        return Response(serializers.data)
+
+    def post(self, request, format=None):
+        serializers = MerchSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)

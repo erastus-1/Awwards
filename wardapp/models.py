@@ -53,7 +53,7 @@ class Projects(models.Model):
         self.save()
 
     def __str__(self):
-        return f'{self.author} post'
+        return f'{self.user} post'
 
     def delete_project(self):
         self.delete()
@@ -62,3 +62,9 @@ class Projects(models.Model):
     def search_projects(cls,search_term):
         project = cls.objects.filter(title__icontains=search_term)
         return project
+
+class AwardMerch(models.Model):
+    name = models.CharField(max_length=40)
+    design = models.TextField()
+    usability = models.TextField()
+    content = models.TextField()

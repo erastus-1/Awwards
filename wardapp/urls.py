@@ -9,6 +9,7 @@ urlpatterns=[
     url('search/', views.search, name='search'),
     url('update/',views.profile_update, name='update'),
     url('post_edit/', views.post_edit, name = 'post_edit'),
+    url('api/merch/', views.MerchList.as_view()),
 ]
 
 if settings.DEBUG:
