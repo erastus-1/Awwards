@@ -24,9 +24,9 @@
                     <p> {% ratings post %} </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted ml-2"><img src="{{ post.user.profile.image.url }}" alt=""
+                    <div class="text-muted ml-2"><img src="{{ post.user.profile.image.url }}" alt=""
                         class="rounded-circle img-fluid mr-1" style="width: 30px;">
-                    <strong>posted By: {{post.user|upper}}</strong></small>
+                    <strong>posted By: {{post.user|upper}}</strong></div>
                     <span>
                     <button class="btn"
                         style=" border-radius: 5em; background-color: #49c5b6; border:none; padding: 2px; height:40px; width: 200px;"><a
