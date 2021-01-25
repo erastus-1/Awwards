@@ -27,5 +27,6 @@ urlpatterns = [
     path('accounts/register/', views.LoginView.as_view(template_name='django_registration/registration_form.html')),
     path('accounts/login/', views.LoginView.as_view(template_name='registration/login.html')),
     path('accounts/logout/', views.logout_then_login, {"next_page": '/'}),
+     path('ratings/', include('star_ratings.urls', namespace='ratings')),
     path('api-token-auth', obtain_auth_token),
 ]
