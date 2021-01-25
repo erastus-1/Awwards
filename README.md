@@ -41,9 +41,9 @@ A user can:
 
 ### **Setup Installation**
 
-- Clone or download and unzip the repository from github *https://github.com/erastus-1/AWWARDS.git*
+- Clone or download and unzip the repository from github *https://github.com/erastus-1/Awwards.git*
 
-- You can use this command *(git clone https://github.com/erastus-1/AWWARDS.git)*, to clone the project to your machine if you have git .
+- You can use this command *(git clone https://github.com/erastus-1/Awwards.git)*, to clone the project to your machine if you have git .
 
 - Install all the requirements using this command:
 
