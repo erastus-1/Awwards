@@ -21,17 +21,18 @@
                     <p style="font-weight:bold;" class="text-center"><strong><i>Technologies used:
                                 {{post.technologies}}</i></strong> </p>
                     <p style="font-weight:bold;" class="text-center"><strong>Posted on: {{post.post_date|date:"d/m/Y"}}</strong> </p>
-                    <small class="text-muted ml-2"><img src="{{ post.user.profile.image.url }}" alt=""
-                            class="rounded-circle img-fluid mr-1" style="width: 30px;">
-                        <strong>posted By: {{post.user|upper}}</strong></small>
                     <p> {% ratings post %} </p>
                 </div>
-                <div class="card-footer" style="text-align: center;">
+                <div class="card-footer">
+                    <small class="text-muted ml-2"><img src="{{ post.user.profile.image.url }}" alt=""
+                        class="rounded-circle img-fluid mr-1" style="width: 30px;">
+                    <strong>posted By: {{post.user|upper}}</strong></small>
+                    <span>
                     <button class="btn"
                         style=" border-radius: 5em; background-color: #49c5b6; border:none; padding: 2px; height:40px; width: 200px;"><a
                             target="_blank" style="color: white; text-decoration:none;"
                             href="{{post.link}}"><strong>View
-                                Project</strong></a></button>
+                                Project</strong></a></button></span>
                 </div>
             </div>
 
